@@ -4,8 +4,8 @@ import "./App.css";
 function Tweet({name, message}) {
     return (
         <div className="tweet">
-            <h3>{name}</h3>
-            <p>{message}</p>
+            <h3 className="name">{name}</h3>
+            <p className="message">{message}</p>
         </div>
     );
 }

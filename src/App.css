@@ -1,24 +1,40 @@
 .app {
   min-height: 100vh;
   background: rgb(108, 162, 180);
-  display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .tweet {
-  height: 300px;
-  width: 300px;
+  height: 150px;
+  width: 500px;
+  margin: 40px;
   background: white;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  
 
 }
 
 .red {
   color: red;
   font-size: 50px;
+}
+
+.name {
+  text-align: left;
+  margin: 10px;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
 }
