@@ -2,39 +2,41 @@ import React from "react";
 import ReactDom from "react-dom";
 
 // CSS
-import './index.css'
+import "./index.css";
+
+// Global Vars
+const books = [
+  {
+    img: "https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg",
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+  },
+  {
+    img: "https://images-eu.ssl-images-amazon.com/images/I/41%2BgrDTP2FL._AC_UL200_SR200,200_.jpg",
+    title: "DO EPIC SHIT",
+    author: "Ankur Warikoo",
+  },
+];
+
+const names = ["john", "peter", "susan"];
+const newName = names.map((name) => {
+  return <h1>{name}</h1>
+});
+console.log(newName);
 
 function BookList() {
-  return (
-    <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-    </section>
-  );
+  return <section className="booklist">{newName}</section>;
 }
 
-const Book = () => {
+const Book = (props) => {
+  const { img, title, author } = props;
   return (
     <article className="book">
-      <Image></Image>
-      <Title />
-      <Author />
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://images-eu.ssl-images-amazon.com/images/I/71aFt4%2BOTOL._AC_UL200_SR200,200_.jpg"
-    alt=""
-  />
-);
-
-const Title = () => <h1>The Alchemist</h1>;
-const Author = () => <h4>Paulo Coelho (Author)</h4>;
 
 ReactDom.render(<BookList />, document.getElementById("root"));
